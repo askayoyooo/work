@@ -1,0 +1,63 @@
+{% extends 'index.html' %}
+{% block page-content %}
+    <div class="panel panel-primary">
+        <div class="panel-heading "><h3 class="panel-title">Projects</h3></div>
+        <div class="panel-body ">
+            <div class="row" style="margin-bottom: 15px">
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for...">
+                        <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">搜索</button>
+                                </span>
+                    </div><!-- /input-group -->
+                </div><!-- /.col-md-4 -->
+                <div class="col-md-1 pull-right">
+                    <button class="btn btn-success" data-toggle="modal" data-target="#myModal" onclick="window.location.href='add_project'">新增</button>
+                </div>
+
+            </div><!-- /.row -->
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead class="">
+                    <tr>
+                        <th>project_id</th>
+                        <th>project_name</th>
+                        <th>test_leader_wzs</th>
+                        <th>test_leader_whq</th>
+                        <th>schedule_start</th>
+                        <th>schedule_end</th>
+                        <th>project_platform</th>
+                        <th>project_sku_qty</th>
+                        <th>project_type</th>
+                        <th>project_style</th>
+                        <th>project_is_leading_project</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in projects %}
+
+                        <tr>
+                            <td>{{ i.project_id }}</td>
+                            <td>{{ i.project_name }}</td>
+                            <td>{{ i.test_leader_wzs }}</td>
+                            <td>{{ i.test_leader_whq }}</td>
+                            <td>{{ i.schedule_start }}</td>
+                            <td>{{ i.schedule_end }}</td>
+                            <td>{{ i.project_platform }}</td>
+                            <td>{{ i.project_sku_qty }}</td>
+                            <td>{{ i.project_type }}</td>
+                            <td>{{ i.project_style }}</td>
+                            <td>{{ i.project_is_leading_project }}</td>
+                        </tr>
+
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}
