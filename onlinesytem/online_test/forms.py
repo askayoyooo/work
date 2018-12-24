@@ -3,6 +3,7 @@ from online_test import models
 
 
 class ProjectForm(Form):
+
     project_id = fields.CharField(
 
         widget=widgets.TextInput(attrs={'class': 'form-control'}),
@@ -19,10 +20,10 @@ class ProjectForm(Form):
                               attrs={'class': 'form-control'})
     )
     schedule_start = fields.DateTimeField(
-        widget=widgets.DateTimeInput(attrs={'class': 'form-control'})
+        widget=widgets.TextInput(attrs={'class': 'form-control', 'readonly': 'true'})
     )
     schedule_end = fields.DateTimeField(
-        widget=widgets.TextInput(attrs={'class': 'form-control'})
+        widget=widgets.TextInput(attrs={'class': 'form-control', 'readonly': 'true'})
     )
     project_platform_id = fields.IntegerField(
         widget=widgets.Select(choices=models.Platform.objects.values_list('id', 'name'),

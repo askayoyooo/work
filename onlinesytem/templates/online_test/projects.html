@@ -14,6 +14,7 @@
                 </div><!-- /.col-md-4 -->
                 <div class="col-md-1 pull-right">
                     <button class="btn btn-success" data-toggle="modal" data-target="#myModal" onclick="window.location.href='add_project'">新增</button>
+
                 </div>
 
             </div><!-- /.row -->
@@ -21,17 +22,18 @@
                 <table class="table table-bordered">
                     <thead class="">
                     <tr>
-                        <th>project_id</th>
-                        <th>project_name</th>
-                        <th>test_leader_wzs</th>
-                        <th>test_leader_whq</th>
-                        <th>schedule_start</th>
-                        <th>schedule_end</th>
-                        <th>project_platform</th>
-                        <th>project_sku_qty</th>
-                        <th>project_type</th>
-                        <th>project_style</th>
-                        <th>project_is_leading_project</th>
+                        <th>project code</th>
+                        <th>project name</th>
+                        <th>TL</th>
+                        <th>PL</th>
+                        <th>开始日期</th>
+                        <th>结束日期</th>
+                        <th>Platform</th>
+                        <th>sku数量</th>
+                        <th>project type</th>
+                        <th>project style</th>
+                        <th>是否Leading</th>
+                        <th>操作</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -49,6 +51,7 @@
                             <td>{{ i.project_type }}</td>
                             <td>{{ i.project_style }}</td>
                             <td>{{ i.project_is_leading_project }}</td>
+                            <td><a href="edit_project/{{ i.id }}/">编辑 <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>  <!--a href="delete_project/{{ i.id }}/">删除 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>--></td>
                         </tr>
 
                     {% endfor %}

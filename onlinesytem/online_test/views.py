@@ -39,4 +39,15 @@ def add_project(request):
         return render(request, 'online_test/add_project.html', {'obj': obj})
 
 
-
+def edit_project(request, nid):
+    if request.method == "GET":
+        ret = models.Project.objects.filter(id=nid).values().first()
+        obj = ProjectForm(ret)
+        return render(request, 'online_test/edit_project.html', {'nid': nid, 'obj': obj})
+    else:
+        obj = ProjectForm(request.POST)
+        if obj.is_valid():
+            print(obj.cleaned_data)
+            models.Project.objects.filter(id=nid).update(**obj.cleaned_data)
+            return redirect('projects')
+        return render(request, 'online_test/edit_project.html', {'nid': nid, 'obj': obj})
