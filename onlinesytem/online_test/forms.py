@@ -11,6 +11,9 @@ class ProjectForm(Form):
     project_name = fields.CharField(
         widget=widgets.TextInput(attrs={'class': 'form-control'})
     )
+    project_model = fields.CharField(
+        widget=widgets.TextInput(attrs={'class': 'form-control', 'placeholder': '多个model 用","隔开'})
+    )
     test_leader_wzs_id = fields.IntegerField(
         widget=widgets.Select(choices=models.UserProfile.objects.values_list('id', 'name').filter(site='1'),
                               attrs={'class': 'form-control'})
@@ -42,4 +45,79 @@ class ProjectForm(Form):
     )
     project_is_leading_project = fields.CharField(
         widget=widgets.TextInput(attrs={'class': 'form-control'})
+    )
+
+
+class ProjectInfoForm(Form):
+    project_id = fields.IntegerField(
+        widget=widgets.TextInput(attrs={'class': 'form-control'}),
+    )
+    project_progress = fields.CharField(
+        widget=widgets.TextInput(attrs={'class': 'form-control'}),
+    )
+    project_bios = fields.CharField(
+        widget=widgets.TextInput(attrs={'class': 'form-control'}),
+    )
+    project_mb = fields.CharField(
+        widget=widgets.TextInput(attrs={'class': 'form-control'}),
+    )
+    project_os = fields.CharField(
+        widget=widgets.TextInput(attrs={'class': 'form-control'}),
+    )
+    update_time = fields.DateTimeField(
+        widget=widgets.TextInput(attrs={'class': 'form-control'}),
+    )
+    dr_chipset = fields.CharField(
+        widget=widgets.TextInput(attrs={'class': 'form-control'}),
+    )
+    dr_vga = fields.CharField(
+        widget=widgets.TextInput(attrs={'class': 'form-control'}),
+    )
+    dr_iamt = fields.CharField(
+        widget=widgets.TextInput(attrs={'class': 'form-control'}),
+    )
+    dr_storage = fields.CharField(
+        widget=widgets.TextInput(attrs={'class': 'form-control'}),
+    )
+    dr_lan = fields.CharField(
+        widget=widgets.TextInput(attrs={'class': 'form-control'}),
+    )
+    dr_audio = fields.CharField(
+        widget=widgets.TextInput(attrs={'class': 'form-control'}),
+    )
+    dr_cr = fields.CharField(
+        widget=widgets.TextInput(attrs={'class': 'form-control'}),
+    )
+    dr_wireless = fields.CharField(
+        widget=widgets.TextInput(attrs={'class': 'form-control'}),
+    )
+    dr_bt = fields.CharField(
+        widget=widgets.TextInput(attrs={'class': 'form-control'}),
+    )
+    dr_panel = fields.CharField(
+        widget=widgets.TextInput(attrs={'class': 'form-control'}),
+    )
+    dr_finger_printer = fields.CharField(
+        widget=widgets.TextInput(attrs={'class': 'form-control'}),
+    )
+    dr_g_sensor = fields.CharField(
+        widget=widgets.TextInput(attrs={'class': 'form-control'}),
+    )
+    dr_camera = fields.CharField(
+        widget=widgets.TextInput(attrs={'class': 'form-control'}),
+    )
+    dr_usb = fields.CharField(
+        widget=widgets.TextInput(attrs={'class': 'form-control'}),
+    )
+    dr_com_parallel = fields.CharField(
+        widget=widgets.TextInput(attrs={'class': 'form-control'}),
+    )
+    dr_serial_io = fields.CharField(
+        widget=widgets.TextInput(attrs={'class': 'form-control'}),
+    )
+    dr_sgx = fields.CharField(
+        widget=widgets.TextInput(attrs={'class': 'form-control'}),
+    )
+    dr_others = fields.CharField(
+        widget=widgets.TextInput(attrs={'class': 'form-control'}),
     )

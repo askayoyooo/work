@@ -102,6 +102,7 @@ class Project(models.Model):
     """
     project_id = models.CharField(max_length=255, unique=True)
     project_name = models.CharField(max_length=64, blank=True, null=True)
+    project_model = models.CharField(max_length=255,blank=True, null=True)
     test_leader_wzs = models.ForeignKey("UserProfile", on_delete=models.CASCADE, related_name='wzs')
     test_leader_whq = models.ForeignKey("UserProfile", on_delete=models.CASCADE, related_name='whq')
     schedule_start = models.DateField(verbose_name="开始日期")
@@ -148,6 +149,24 @@ class ProjectInfo(models.Model):
     project_mb = models.CharField(verbose_name="MB", max_length=255, blank=True, null=True)
     project_os = models.CharField(verbose_name="OS", max_length=255, blank=True, null=True)
     update_time = models.DateTimeField(auto_now_add=True, blank=True)
+    dr_chipset = models.CharField(verbose_name="Chipset", max_length=255, blank=True, null=True, default=None)
+    dr_vga = models.TextField(verbose_name="VGA", max_length=2000, blank=True, null=True, default=None)
+    dr_iamt = models.CharField(verbose_name="iAMT", max_length=255, blank=True, null=True, default=None)
+    dr_storage = models.CharField(verbose_name="Storage", max_length=255, blank=True, null=True, default=None)
+    dr_lan = models.CharField(verbose_name="LAN", max_length=255, blank=True, null=True, default=None)
+    dr_audio = models.TextField(verbose_name="Audio", max_length=2000, blank=True, null=True, default=None)
+    dr_cr = models.CharField(verbose_name="CardReader", max_length=255, blank=True, null=True, default=None)
+    dr_wireless = models.CharField(verbose_name="WirelessLAN", max_length=255, blank=True, null=True, default=None)
+    dr_bt = models.CharField(verbose_name="BT", max_length=255, blank=True, null=True, default=None)
+    dr_panel = models.CharField(verbose_name="Panel", max_length=255, blank=True, null=True, default=None)
+    dr_finger_printer = models.CharField(verbose_name="FingerPrinter", max_length=255, blank=True, null=True, default=None)
+    dr_g_sensor = models.CharField(verbose_name="G-sensor", max_length=255, blank=True, null=True, default=None)
+    dr_camera = models.CharField(verbose_name="Camera", max_length=255, blank=True, null=True, default=None)
+    dr_usb = models.CharField(verbose_name="USB", max_length=255, blank=True, null=True, default=None)
+    dr_com_parallel = models.CharField(verbose_name="Comport Parallel", max_length=255, blank=True, null=True, default=None)
+    dr_serial_io = models.CharField(verbose_name="Serial IO", max_length=255, blank=True, null=True, default=None)
+    dr_sgx = models.CharField(verbose_name="SGX", max_length=255, blank=True, null=True, default=None)
+    dr_others = models.CharField(verbose_name="others", max_length=255, blank=True, null=True, default=None)
 
     def __str__(self):
         return self.project
