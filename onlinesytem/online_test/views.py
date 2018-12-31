@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import auth
 from online_test.forms import ProjectForm, ProjectInfoForm
 from online_test import models
@@ -58,6 +58,7 @@ def project_info(request, nid):
         ret = models.ProjectInfo.objects.filter(id=nid).values().first()
         obj_info = ProjectInfoForm(ret)
         return render(request, 'online_test/add_project_info.html', {'nid': nid, 'obj_info': obj_info})
+        # return HttpResponse('aaa')
 
 
 

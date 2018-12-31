@@ -44,8 +44,8 @@
 
                         <tr>
                             <td>{{ i.project_id }}
-                                <a data-toggle="modal" data-target="#myModal" title="编辑软件版本" href="project_info/{{ i.id }}/" >
-                                    <span class="glyphicon glyphicon-modal-window" aria-hidden="true"></span>
+                                <a data-toggle="modal" data-target="#myModal" title="编辑软件版本"  >
+                                    <span class="glyphicon glyphicon-modal-window" aria-hidden="true" onclick="test({{ i.id }})"></span>
                                 </a>
                             </td>
                             <td>{{ i.project_name }}</td>
@@ -60,7 +60,7 @@
                             <td>{{ i.project_style }}</td>
                             <td>{{ i.project_is_leading_project }}</td>
                             <td><a href="edit_project/{{ i.id }}/">编辑 <span class="glyphicon glyphicon-edit"
-                                                                            aria-hidden="true"></span></a>
+                                                                            aria-hidden="true" ></span></a>
 
                             </td>
                         </tr>
@@ -72,7 +72,9 @@
             </div>
 
         </div>
+        <div id="testAjax">
 
+        </div>
         <!-- Modal -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
@@ -80,7 +82,7 @@
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                 aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                        <h4 class="modal-title" id="myModalLabel">Project Information</h4>
                     </div>
                     <div class="modal-body">
                         test
@@ -94,6 +96,18 @@
         </div>
     </div>
     <script>
+        function test(nid){
+            $.ajax({
+                url:'project_info/'+nid,
+                type:'GET',
+                data:{"csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()},
+                success:function (arg) {
+                    alert(arg);
+                    $("#testAjax").append(arg);
+                }
+            }
 
+        )
+        }
     </script>
 {% endblock %}
