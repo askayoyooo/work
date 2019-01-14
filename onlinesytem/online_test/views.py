@@ -57,8 +57,23 @@ def project_info(request, nid):
     if request.method == "GET":
         ret = models.ProjectInfo.objects.filter(id=nid).values().first()
         obj_info = ProjectInfoForm(ret)
-        return render(request, 'online_test/add_project_info.html', {'nid': nid, 'obj_info': obj_info})
+        return render(request, 'online_test/project_info.html', {'nid': nid, 'obj_info': obj_info})
         # return HttpResponse('aaa')
 
+
+def add_project_info(request, nid):
+    pass
+
+
+def edit_project_info(request, nid):
+    if request.method == "GET":
+        ret = models.ProjectInfo.objects.filter(id = nid).values().first()
+        obj_info = ProjectInfoForm(ret)
+        return render(request, 'online_test/edit_project_info.html', {'nid': nid, 'obj_info': obj_info})
+    else:
+        obj_info = ProjectInfoForm(request.POST)
+        if obj_info.is_valid():
+            models.ProjectInfo.objects.filter(id=nid).update(**obj_info.cleaned_data)
+        return render(request, 'online_test/edit_project_info.html', {'nid': nid, 'obj_info': obj_info})
 
 
