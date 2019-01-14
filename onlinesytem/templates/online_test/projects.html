@@ -44,7 +44,13 @@
 
                         <tr>
                             <td>{{ i.project_id }}
-                                <a data-toggle="modal" data-target="#myModal" title="编辑软件版本"  >
+                                <a  title="显示软件版本"  href="project_info/{{ i.id }}" >
+                                    <span class="glyphicon glyphicon-flag" aria-hidden="true" onclick="test({{ i.id }})"></span>
+                                </a>
+                                <a  title="编辑软件版本"  href="edit_project_info/{{ i.id }}" >
+                                    <span class="glyphicon glyphicon-tasks" aria-hidden="true" onclick="test({{ i.id }})"></span>
+                                </a>
+                                <a data-toggle="modal" data-target="#myModal" title="显示软件版本"  href="add_project_info.html" >
                                     <span class="glyphicon glyphicon-modal-window" aria-hidden="true" onclick="test({{ i.id }})"></span>
                                 </a>
                             </td>
@@ -102,7 +108,7 @@
                 type:'GET',
                 data:{"csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()},
                 success:function (arg) {
-                    alert(arg);
+
                     $("#testAjax").append(arg);
                 }
             }
