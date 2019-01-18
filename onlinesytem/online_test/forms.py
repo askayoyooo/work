@@ -48,10 +48,22 @@ class ProjectForm(Form):
     )
 
 
+
+
+
+
+
 class ProjectInfoForm(Form):
+    # project_id = fields.IntegerField(
+    #     widget=widgets.Select(choices=models.Project.objects.values_list('id', 'project_name').filter(),
+    #                           attrs={'class': 'form-control'})
+    # )
     project_id = fields.IntegerField(
-        widget=widgets.TextInput(attrs={'class': 'form-control'}),
+        widget=widgets.Select( attrs={'class': 'form-control'})
     )
+    # project_id = fields.CharField(
+    #     widget=widgets.TextInput(attrs={'class': 'form-control'}),
+    # )
     project_progress = fields.CharField(
         widget=widgets.TextInput(attrs={'class': 'form-control'}),
     )
@@ -121,3 +133,7 @@ class ProjectInfoForm(Form):
     dr_others = fields.CharField(
         widget=widgets.TextInput(attrs={'class': 'form-control'}),
     )
+
+    def __init__(self, *args, **kwargs):
+        super(ProjectInfoForm, self).__init__(*args, **kwargs)
+        self.fields["project_id"].widget.choices = models.Project.objects.values_list("id", "project_name").filter()
