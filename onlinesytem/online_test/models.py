@@ -115,6 +115,7 @@ class Project(models.Model):
     project_style = models.ForeignKey("ProjectStyle", on_delete=models.CASCADE)
     project_sku_qty = models.CharField(verbose_name="sku 数量", max_length=255, blank=True, null=True)
     project_is_leading_project = models.CharField(verbose_name="是否Leading",max_length=255, blank=True, null=True)
+    project_progress = models.CharField(verbose_name="进度", max_length=255, blank=True, null=True)
 
     def __str__(self):
         return self.project_name
@@ -144,7 +145,6 @@ class ProjectStyle(models.Model):
 class ProjectInfo(models.Model):
     # 每次修改其中一项时，更新一整条，时间会自动生成
     project = models.ForeignKey("Project", on_delete=models.CASCADE)
-    project_progress = models.CharField(verbose_name="进度", max_length=255, blank=True, null=True)
     project_bios = models.CharField(verbose_name="BIOS", max_length=255, blank=True, null=True)
     project_mb = models.CharField(verbose_name="MB", max_length=255, blank=True, null=True)
     project_os = models.CharField(verbose_name="OS", max_length=255, blank=True, null=True)

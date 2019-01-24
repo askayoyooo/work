@@ -15,11 +15,11 @@ class ProjectForm(Form):
         widget=widgets.TextInput(attrs={'class': 'form-control', 'placeholder': '多个model 用","隔开'})
     )
     test_leader_wzs_id = fields.IntegerField(
-        widget=widgets.Select(choices=models.UserProfile.objects.values_list('id', 'name').filter(site='1'),
+        widget=widgets.Select(
                               attrs={'class': 'form-control'})
     )
     test_leader_whq_id = fields.IntegerField(
-        widget=widgets.Select(choices=models.UserProfile.objects.values_list('id', 'name').filter(site='2'),
+        widget=widgets.Select(
                               attrs={'class': 'form-control'})
     )
     schedule_start = fields.DateTimeField(
@@ -46,7 +46,14 @@ class ProjectForm(Form):
     project_is_leading_project = fields.CharField(
         widget=widgets.TextInput(attrs={'class': 'form-control'})
     )
+    project_progress = fields.CharField(
+        widget=widgets.TextInput(attrs={'class': 'form-control'}),
+    )
 
+    def __init__(self, *args, **kwargs):
+        super(ProjectForm, self).__init__(*args, **kwargs)
+        self.fields["test_leader_wzs_id"].widget.choices = models.UserProfile.objects.values_list("id", "name").filter(site='1')
+        self.fields["test_leader_whq_id"].widget.choices = models.UserProfile.objects.values_list("id", "name").filter(site='2')
 
 
 
@@ -65,9 +72,7 @@ class ProjectInfoForm(Form):
     # project_id = fields.CharField(
     #     widget=widgets.TextInput(attrs={'class': 'form-control'}),
     # )
-    project_progress = fields.CharField(
-        widget=widgets.TextInput(attrs={'class': 'form-control'}),
-    )
+
     project_bios = fields.CharField(
         widget=widgets.TextInput(attrs={'class': 'form-control'}),
     )

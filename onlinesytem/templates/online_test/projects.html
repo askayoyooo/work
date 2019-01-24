@@ -36,6 +36,7 @@
                         <th>project type</th>
                         <th>project style</th>
                         <th>是否Leading</th>
+                        <th>进度</th>
                         <th>维护版本信息</th>
                     </tr>
                     </thead>
@@ -58,6 +59,7 @@
                             <td>{{ i.project_type }}</td>
                             <td>{{ i.project_style }}</td>
                             <td>{{ i.project_is_leading_project }}</td>
+                            <td>{{ i.project_progress }}</td>
                             <td><a  title="编辑软件版本"  href="edit_project_info/{{ i.id }}" >维护
                                     <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>
                                 </a>
