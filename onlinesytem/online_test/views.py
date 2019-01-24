@@ -33,8 +33,10 @@ def add_project(request):
     else:
         obj = ProjectForm(request.POST)
         if obj.is_valid():
-            # print(obj.cleaned_data)
-            models.Project.objects.create(**obj.cleaned_data)
+            p = models.Project.objects.create(**obj.cleaned_data)
+            # 创建project 的同时创建一个对应的project_info
+            pf = models.ProjectInfo(project_id=p.id)
+            pf.save()
             return redirect('projects')
         return render(request, 'online_test/add_project.html', {'obj': obj})
 
@@ -67,15 +69,16 @@ def add_project_info(request, nid):
 
 def edit_project_info(request, nid):
     if request.method == "GET":
-        ret = models.ProjectInfo.objects.filter(id=nid).values().first()
+        ret = models.ProjectInfo.objects.filter(project_id=nid).values().last()
+        print(ret)
         obj_info = ProjectInfoForm(ret, nid)
         print('get')
         return render(request, 'online_test/edit_project_info.html', {'nid': nid, 'obj_info': obj_info})
     else:
         print('post1')
         obj_info = ProjectInfoForm(request.POST, nid)
-
         if obj_info.is_valid():
+            print(obj_info)
             # models.ProjectInfo.objects.filter(id=nid).update(**obj_info.cleaned_data)
             models.ProjectInfo.objects.create(**obj_info.cleaned_data)
             print('post2=======================')

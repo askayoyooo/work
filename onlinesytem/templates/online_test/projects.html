@@ -36,23 +36,16 @@
                         <th>project type</th>
                         <th>project style</th>
                         <th>是否Leading</th>
-                        <th>操作</th>
+                        <th>维护版本信息</th>
                     </tr>
                     </thead>
                     <tbody>
                     {% for i in projects %}
 
                         <tr>
-                            <td>{{ i.project_id }}
-                                <a  title="显示软件版本"  href="project_info/{{ i.id }}" >
-                                    <span class="glyphicon glyphicon-flag" aria-hidden="true" onclick="test({{ i.id }})"></span>
-                                </a>
-                                <a  title="编辑软件版本"  href="edit_project_info/{{ i.id }}" >
-                                    <span class="glyphicon glyphicon-tasks" aria-hidden="true" onclick="test({{ i.id }})"></span>
-                                </a>
-                                <a data-toggle="modal" data-target="#myModal" title="显示软件版本"  href="add_project_info.html" >
-                                    <span class="glyphicon glyphicon-modal-window" aria-hidden="true" onclick="test({{ i.id }})"></span>
-                                </a>
+                            <td>
+                                <a href="edit_project/{{ i.id }}/">{{ i.project_id }} <span class="glyphicon glyphicon-edit"
+                                                                            aria-hidden="true" ></span></a>
                             </td>
                             <td>{{ i.project_name }}</td>
                             <td>{{ i.project_model }}</td>
@@ -65,8 +58,9 @@
                             <td>{{ i.project_type }}</td>
                             <td>{{ i.project_style }}</td>
                             <td>{{ i.project_is_leading_project }}</td>
-                            <td><a href="edit_project/{{ i.id }}/">编辑 <span class="glyphicon glyphicon-edit"
-                                                                            aria-hidden="true" ></span></a>
+                            <td><a  title="编辑软件版本"  href="edit_project_info/{{ i.id }}" >维护
+                                    <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>
+                                </a>
 
                             </td>
                         </tr>

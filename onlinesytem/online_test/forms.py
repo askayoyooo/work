@@ -54,12 +54,13 @@ class ProjectForm(Form):
 
 
 class ProjectInfoForm(Form):
+
     # project_id = fields.IntegerField(
     #     widget=widgets.Select(choices=models.Project.objects.values_list('id', 'project_name').filter(),
     #                           attrs={'class': 'form-control'})
     # )
     project_id = fields.IntegerField(
-        widget=widgets.Select( attrs={'class': 'form-control'})
+        widget=widgets.Select(attrs={'class': 'form-control'})
     )
     # project_id = fields.CharField(
     #     widget=widgets.TextInput(attrs={'class': 'form-control'}),
@@ -77,7 +78,7 @@ class ProjectInfoForm(Form):
         widget=widgets.TextInput(attrs={'class': 'form-control'}),
     )
     update_time = fields.DateTimeField(
-        widget=widgets.TextInput(attrs={'class': 'form-control'}),
+        widget=widgets.TextInput(attrs={'class': 'form-control'})
     )
     dr_chipset = fields.CharField(
         widget=widgets.TextInput(attrs={'class': 'form-control'}),
