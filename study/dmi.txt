@@ -1,0 +1,636 @@
+SMBIOS Header
+---------------------------------------
+Name				Type		Data
+====				====		====
+DMI Revision            	BYTE    	3.0
+SMBIOS # Sturc          	WORD    	29
+SMBIOS Max. Struc. Size 	WORD    	128
+DMI Table Address       	DWORD   	79ACB000h
+DMI Table Storage Length	WORD    	9700
+==============================================================================
+
+
+[Type 000] -- BIOS Information
+---------------------------------------
+Name				Type		Data
+====				====		====
+Struc. Length           	BYTE    	24 bytes
+Struc. Handle           	WORD    	0000h
+BIOS Vendor             	STRING  	Acer
+BIOS Version            	STRING  	R01-A1
+BIOS Starting Add. Seg. 	WORD    	F000h
+BIOS Release Date       	STRING  	09/12/2018
+BIOS ROM Size           	BYTE    	6144 KB
+BIOS Characteristics    	QWORD   	0000 0001 7D09 9A80h
+						Bit.07:PCI is Reserved
+						Bit.09:Plug and Play is supported
+						Bit.11:BIOS is Upgradeable(Flash)
+						Bit.12:BIOS shadowing is allowed
+						Bit.15:Boot from CD is supported
+						Bit.16:Selectable Boot is supported
+						Bit.19:EDD(Enhanced Disk Drive) Specification is supported
+						Bit.24:Int 13h - 3.5" / 720 KB Floppy Services are supported
+						Bit.26:Int 5h, Print Screen Service is supported
+						Bit.27:Int 9h, 8042 Keyboard services are supported
+						Bit.28:Int 14h,Serial Services are supported
+						Bit.29:Int 17h, Printer Services are supported
+						Bit.30:Int 10h, CGA/Mono Video Services are supported
+						Bit.32~47:Reserved for BIOS Vendor
+BIOS Char. Extension    	WORD    	0D03h
+						Bit.00:ACPI is supported
+						Bit.01:USB Legacy is supported
+						Bit.08:BIOS Boot Specification is supported
+						Bit.10:Enable Targeted Content Distribution
+						Bit.11:UEFI Specification is supported
+						Bit.13~15:Reserved
+System BIOS Major       	BYTE    	0Ah
+System BIOS Minor       	BYTE    	01h
+Embedded Controller Firmware Major Release	BYTE    	01h
+Embedded Controller Firmware Minor Release	BYTE    	02h
+						
+==============================================================================
+
+
+[Type 001] -- System Information
+---------------------------------------
+Name				Type		Data
+====				====		====
+Struc. Length           	BYTE    	27 bytes
+Struc. Handle           	WORD    	0001h
+Manufacturer            	STRING  	Acer
+Product Name            	STRING  	Veriton EX2620G
+Version                 	STRING  	1.0
+Serial Number           	STRING  	                      
+UUID                    	16 BYTEs	FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FFh
+Wake-up Type            	BYTE    	06h
+						Power Switch
+SKUNumber               	STRING  	0000000000000000
+Family                  	STRING  	Veriton Essential
+==============================================================================
+
+
+[Type 002] -- Base Board/Module Information
+---------------------------------------
+Name				Type		Data
+====				====		====
+Struc. Length           	BYTE    	15 bytes
+Struc. Handle           	WORD    	0002h
+Manufacturer            	STRING  	Acer
+Product                 	STRING  	Veriton EX2620G
+Version                 	STRING  	1.0
+Serial Number           	STRING  	123456789876543210SKU3
+Asset Tag               	STRING  	123456789876543210SKU3
+Feature Flags           	BYTE    	09h
+						Bit.00:the board is a hosting board.
+						Bit.03:the board is replaceable.
+Location in Chassis     	STRING  	1234567898765432101234567890SKU3
+Chassis Handle          	WORD    	0003h
+Board Type              	BYTE    	0Ah
+						Motherboard(includes processor, memory, and I/O)
+Number of Contained Object Handles	BYTE    	00h
+==============================================================================
+
+
+[Type 003] -- System Enclosure or Chassis
+---------------------------------------
+Name				Type		Data
+====				====		====
+Struc. Length           	BYTE    	22 bytes
+Struc. Handle           	WORD    	0003h
+Manufacturer            	STRING  	Acer
+Type                    	BYTE    	03h
+						Desktop
+Version                 	STRING  	12345678
+Serial Number           	STRING  	123456789876543210SKU3
+Asset Tag               	STRING  	123456789876543210SKU3
+Bootup State            	BYTE    	02h
+						Unknown
+Power Supply State      	BYTE    	02h
+						Unknown
+Thermal State           	BYTE    	02h
+						Unknown
+Security Status         	BYTE    	02h
+						Unknown
+OEM-defined             	DWORD   	0000 0000h
+Height                  	BYTE    	00h
+Number of Power Cords   	BYTE    	01h
+Contained Element Count 	BYTE    	00h
+Contained Element Record Length	BYTE    	03h
+Contained Elements      	BYTEs   	None
+SKU Number              	STRING  	123456789876543210SKU3
+==============================================================================
+
+
+[Type 004] -- Processor Information
+---------------------------------------
+Name				Type		Data
+====				====		====
+Struc. Length           	BYTE    	48 bytes
+Struc. Handle           	WORD    	0020h
+Socket Designation      	STRING  	SOCKET 0
+Processor Type          	BYTE    	03h
+						Central Processor
+Processor Family        	BYTE    	0Fh
+						Intel(R) Celeron(R) processor
+Processor Manufacturer  	STRING  	Intel
+Processor ID            	DWORD   	0007 06A1h
+Processor Features      	DWORD   	BFEB FBFFh
+Processor Version       	STRING  	Intel(R) Celeron(R) J4005 CPU @ 2.00GHz
+Voltage                 	BYTE    	8Ch
+						Bit.07:Set to 1, the remaining seven bits of the field are set  
+		      to contain the processor's current voltage times 10.
+						Current voltage = 1.2V
+External Clock          	WORD    	100 MHz
+Max Speed               	WORD    	2800 MHz
+Current Speed           	WORD    	2000 MHz
+Status                  	BYTE    	41h
+						Bit.06:CPU Socket Populated
+						CPU Enabled
+Processor Upgrade       	BYTE    	01h
+						Other
+L1 Cache Handle         	WORD    	001Eh
+L2 Cache Handle         	WORD    	001Fh
+L3 Cache Handle         	WORD    	FFFFh
+Serial Number           	STRING  	
+Asset Tag               	STRING  	Fill By OEM
+Part Number             	STRING  	Fill By OEM
+Core Count              	BYTE    	02h
+Core Enabled            	BYTE    	02h
+Thread Count            	BYTE    	02h
+Processor Characteristics	WORD    	0004h
+						Bit.02:64-Bit.Capable
+Processor Family 2      	WORD    	000Fh
+						Intel(R) Celeron(R) processor
+Unknown                 	BYTEs   	02 02 02 04 00 0F 00 02 00 02 00 02 00h
+==============================================================================
+
+
+[Type 007] -- Cache Information
+---------------------------------------
+Name				Type		Data
+====				====		====
+Struc. Length           	BYTE    	19 bytes
+Struc. Handle           	WORD    	001Eh
+Socket Designation      	STRING  	CPU Internal L1
+Cache Configuration     	WORD    	0180h
+						Cache Level - 1
+						Cache Socketed:Not Socketed
+						Location, relative to the CPU module:Internal
+						At boot time:Enable
+						Operational Mode:Write Back
+Maximum Cache Size      	WORD    	0070h
+						1K granularity [Max Size:112]
+Installed Size          	WORD    	0070h
+						1K granularity [Max Size:112]
+Supported SRAM Type     	WORD    	0020h
+						Bit.05:Synchronous
+Current SRAM Type       	WORD    	0020h
+						Bit.05:Synchronous
+Cache Speed             	BYTE    	00h
+						Unknown
+Error Correction Type   	BYTE    	04h
+						Parity
+System Cache Type       	BYTE    	01h
+						Other
+Associativity           	BYTE    	01h
+						Other
+==============================================================================
+
+
+[Type 007] -- Cache Information
+---------------------------------------
+Name				Type		Data
+====				====		====
+Struc. Length           	BYTE    	19 bytes
+Struc. Handle           	WORD    	001Fh
+Socket Designation      	STRING  	CPU Internal L2
+Cache Configuration     	WORD    	0181h
+						Cache Level - 2
+						Cache Socketed:Not Socketed
+						Location, relative to the CPU module:Internal
+						At boot time:Enable
+						Operational Mode:Write Back
+Maximum Cache Size      	WORD    	1000h
+						1K granularity [Max Size:4096]
+Installed Size          	WORD    	1000h
+						1K granularity [Max Size:4096]
+Supported SRAM Type     	WORD    	0020h
+						Bit.05:Synchronous
+Current SRAM Type       	WORD    	0020h
+						Bit.05:Synchronous
+Cache Speed             	BYTE    	00h
+						Unknown
+Error Correction Type   	BYTE    	05h
+						Single-Bit.ECC
+System Cache Type       	BYTE    	05h
+						Unified
+Associativity           	BYTE    	08h
+						16-way Set-Asociative
+==============================================================================
+
+
+[Type 009] -- System Slots
+---------------------------------------
+Name				Type		Data
+====				====		====
+Struc. Length           	BYTE    	17 bytes
+Struc. Handle           	WORD    	0008h
+Slot Designation        	STRING  	PCIE1
+Slot Type               	BYTE    	B0h
+						PCI Express Gen 2 x16
+Slot Data Bus Width     	BYTE    	0Dh
+						16x or x16
+Current Usage           	BYTE    	03h
+						Available
+Slot Length             	BYTE    	04h
+						Long Length
+Slot ID                 	WORD    	0001h
+Slot Characteristics 1  	BYTE    	0Ch
+						Bit.2:Provides 3.3 Volts
+						Bit.3:Slot's opening is shared with another slot.
+Slot Characteristics 2  	BYTE    	01h
+						Bit.0:PCI slot supports PME# signal
+Segment Group Number    	WORD    	F000h
+Bus Number              	BYTE    	00h
+Device/Function Number  	BYTE    	00h
+						Device Number:00h
+						function number:00h
+==============================================================================
+
+
+[Type 009] -- System Slots
+---------------------------------------
+Name				Type		Data
+====				====		====
+Struc. Length           	BYTE    	17 bytes
+Struc. Handle           	WORD    	0009h
+Slot Designation        	STRING  	NGFFM1
+Slot Type               	BYTE    	17h
+						M.2 Socket 3 (Mechanical Key M)
+Slot Data Bus Width     	BYTE    	09h
+						2x or x2
+Current Usage           	BYTE    	03h
+						Available
+Slot Length             	BYTE    	03h
+						Short Length
+Slot ID                 	WORD    	0002h
+Slot Characteristics 1  	BYTE    	0Ch
+						Bit.2:Provides 3.3 Volts
+						Bit.3:Slot's opening is shared with another slot.
+Slot Characteristics 2  	BYTE    	01h
+						Bit.0:PCI slot supports PME# signal
+Segment Group Number    	WORD    	F000h
+Bus Number              	BYTE    	00h
+Device/Function Number  	BYTE    	00h
+						Device Number:00h
+						function number:00h
+==============================================================================
+
+
+[Type 009] -- System Slots
+---------------------------------------
+Name				Type		Data
+====				====		====
+Struc. Length           	BYTE    	17 bytes
+Struc. Handle           	WORD    	000Ah
+Slot Designation        	STRING  	NGFFE1
+Slot Type               	BYTE    	ACh
+						PCI Express Gen 2 x1
+Slot Data Bus Width     	BYTE    	08h
+						1x or x1
+Current Usage           	BYTE    	03h
+						Available
+Slot Length             	BYTE    	03h
+						Short Length
+Slot ID                 	WORD    	0003h
+Slot Characteristics 1  	BYTE    	0Ch
+						Bit.2:Provides 3.3 Volts
+						Bit.3:Slot's opening is shared with another slot.
+Slot Characteristics 2  	BYTE    	01h
+						Bit.0:PCI slot supports PME# signal
+Segment Group Number    	WORD    	F000h
+Bus Number              	BYTE    	00h
+Device/Function Number  	BYTE    	00h
+						Device Number:00h
+						function number:00h
+==============================================================================
+
+
+[Type 010] -- On Board Devices Information[device #02]
+---------------------------------------
+Name				Type		Data
+====				====		====
+Struc. Length           	BYTE    	12 bytes
+Struc. Handle           	WORD    	000Bh
+Device Type             	BYTE    	83h
+						Device Enabled
+						Video
+Description String      	STRING  	Intel Gemini Lake UHD Graphics
+==============================================================================
+
+
+[Type 010] -- On Board Devices Information[device #03]
+---------------------------------------
+Name				Type		Data
+====				====		====
+Struc. Length           	BYTE    	12 bytes
+Struc. Handle           	WORD    	000Bh
+Device Type             	BYTE    	85h
+						Device Enabled
+						Ethernet
+Description String      	STRING  	Onboard Realtek LAN
+==============================================================================
+
+
+[Type 010] -- On Board Devices Information[device #04]
+---------------------------------------
+Name				Type		Data
+====				====		====
+Struc. Length           	BYTE    	12 bytes
+Struc. Handle           	WORD    	000Bh
+Device Type             	BYTE    	87h
+						Device Enabled
+						Sound
+Description String      	STRING  	Onboard Resltek HD Audio
+==============================================================================
+
+
+[Type 010] -- On Board Devices Information[device #05]
+---------------------------------------
+Name				Type		Data
+====				====		====
+Struc. Length           	BYTE    	12 bytes
+Struc. Handle           	WORD    	000Bh
+Device Type             	BYTE    	89h
+						Device Enabled
+						SATA Controller
+Description String      	STRING  	Onboard SATA Controller
+==============================================================================
+
+
+[Type 011] -- OEM Strings
+---------------------------------------
+Name				Type		Data
+====				====		====
+Struc. Length           	BYTE    	5 bytes
+Struc. Handle           	WORD    	000Ch
+Count                   	BYTE    	02h
+String #1               	STRING  	Intel Gemini Lake Platform
+String #2               	STRING  	Wi-Fi Config for US
+==============================================================================
+
+
+[Type 016] -- Physical Memory Array
+---------------------------------------
+Name				Type		Data
+====				====		====
+Struc. Length           	BYTE    	23 bytes
+Struc. Handle           	WORD    	000Dh
+Location                	BYTE    	03h
+						System board or motherboard
+Use                     	BYTE    	03h
+						System memory
+Memory Error Correction 	BYTE    	03h
+						None
+Maximum Capacity        	DWORD   	0080 0000h
+						8388608 KB
+Mem. Err. Info. Handle  	WORD    	FFFEh
+						The system does not provide the error information structure.
+Number of Memory Devices	WORD    	0002h
+Extended Maximum Capacity	QWORD   	0000 0000 0000 0000h
+==============================================================================
+
+
+[Type 017] -- Memory Device
+---------------------------------------
+Name				Type		Data
+====				====		====
+Struc. Length           	BYTE    	40 bytes
+Struc. Handle           	WORD    	000Fh
+Phys. Mem. Array Handle 	WORD    	000Dh
+Mem. Err. Info. Handle  	WORD    	FFFEh
+						The system does not provide the error information structure.
+Total Width             	WORD    	0040h
+						64 bits
+Data Width              	WORD    	0040h
+						64 bits
+Size                    	WORD    	1000h
+						4096 MB
+Form Factor             	BYTE    	0Dh
+						SODIMM
+Device Set              	BYTE    	00h
+						The device is not part of a set
+Device Locator          	STRING  	DIMM1
+Bank Locator            	STRING  	BANK1
+Memory Type             	BYTE    	1Ah
+						DDR4
+Type Detail             	WORD    	0080h
+						Bit.07:Synchronous
+Speed                   	WORD    	0A6Ah
+Manufacturer            	STRING  	Kingston
+Serial Number           	STRING  	22262317
+Asset Tag               	STRING  	9876543210
+Part Number             	STRING  	ACR26D4S9S1ME-4
+Attributes              	BYTE    	00h
+Extended Size           	DWORD   	0000 0000h
+Configured Memory Clock Speed	WORD    	0960h
+Minimum voltage         	WORD    	04B0h
+Maximum voltage         	WORD    	04B0h
+Configured voltage      	WORD    	04B0h
+==============================================================================
+
+
+[Type 017] -- Memory Device
+---------------------------------------
+Name				Type		Data
+====				====		====
+Struc. Length           	BYTE    	40 bytes
+Struc. Handle           	WORD    	0011h
+Phys. Mem. Array Handle 	WORD    	000Dh
+Mem. Err. Info. Handle  	WORD    	FFFEh
+						The system does not provide the error information structure.
+Total Width             	WORD    	0000h
+						0 bits
+Data Width              	WORD    	0000h
+						0 bits
+Size                    	WORD    	0000h
+						No memory device is installed in the socket
+Form Factor             	BYTE    	0Dh
+						SODIMM
+Device Set              	BYTE    	00h
+						The device is not part of a set
+Device Locator          	STRING  	DIMM2
+Bank Locator            	STRING  	BANK2
+Memory Type             	BYTE    	01h
+						Other
+Type Detail             	WORD    	0000h
+Speed                   	WORD    	0000h
+Manufacturer            	STRING  	
+Serial Number           	STRING  	
+Asset Tag               	STRING  	
+Part Number             	STRING  	
+Attributes              	BYTE    	00h
+Extended Size           	DWORD   	0000 0000h
+Configured Memory Clock Speed	WORD    	0000h
+Minimum voltage         	WORD    	0000h
+Maximum voltage         	WORD    	0000h
+Configured voltage      	WORD    	0000h
+==============================================================================
+
+
+[Type 019] -- Memory Array Mapped Address
+---------------------------------------
+Name				Type		Data
+====				====		====
+Struc. Length           	BYTE    	31 bytes
+Struc. Handle           	WORD    	000Eh
+Starting Address        	DWORD   	0000 0000h
+End Address             	DWORD   	003F FFFFh
+Mem. Array Handle       	WORD    	000Dh
+Partition Width         	BYTE    	01h
+Extended Starting Address	QWORD   	0000 0000 0000 0000h
+Extended Ending Address 	QWORD   	0000 0000 0000 0000h
+==============================================================================
+
+
+[Type 020] -- Memory Device Mapped Address
+---------------------------------------
+Name				Type		Data
+====				====		====
+Struc. Length           	BYTE    	35 bytes
+Struc. Handle           	WORD    	0010h
+Starting Address        	DWORD   	0000 0000h
+End Address             	DWORD   	003F FFFFh
+Memory Device Handle    	WORD    	000Fh
+Mem. Map. Add. Handle   	WORD    	000Eh
+Partition Row Position  	BYTE    	FFh
+Interleave Position     	BYTE    	01h
+Interleaved Data Depth  	BYTE    	02h
+Extended Starting Address	QWORD   	0000 0000 0000 0000h
+Extended Ending Address 	QWORD   	0000 0000 0000 0000h
+==============================================================================
+
+
+[Type 020] -- Memory Device Mapped Address
+---------------------------------------
+Name				Type		Data
+====				====		====
+Struc. Length           	BYTE    	35 bytes
+Struc. Handle           	WORD    	0012h
+Starting Address        	DWORD   	0000 0000h
+End Address             	DWORD   	0000 0000h
+Memory Device Handle    	WORD    	0011h
+Mem. Map. Add. Handle   	WORD    	000Eh
+Partition Row Position  	BYTE    	01h
+Interleave Position     	BYTE    	00h
+Interleaved Data Depth  	BYTE    	00h
+Extended Starting Address	QWORD   	0000 0000 0000 0000h
+Extended Ending Address 	QWORD   	0000 0000 0000 0000h
+==============================================================================
+
+
+[Type 024] -- Hardware Security
+---------------------------------------
+Name				Type		Data
+====				====		====
+Struc. Length           	BYTE    	5 bytes
+Struc. Handle           	WORD    	0013h
+Hardware Sec. Set.      	BYTE    	22h
+						Front Panel Reset Status:Not Implemented
+						Administrator Password Status:Disabled
+						Keyboard Password Status:Not Implemented
+						Power-on Password Status:Disabled
+==============================================================================
+
+
+[Type 032] -- System Boot Information
+---------------------------------------
+Name				Type		Data
+====				====		====
+Struc. Length           	BYTE    	20 bytes
+Struc. Handle           	WORD    	0014h
+Reserved                	6 BYTEs 	00 00 00 00 00 00h
+Boot Status             	10 BYTEs	00 00 00 00 00 00 00 00 00 00h
+						No errors detected
+==============================================================================
+
+
+[Type 041] -- Onboard Devices Extended Information
+---------------------------------------
+Name				Type		Data
+====				====		====
+Struc. Length           	BYTE    	11 bytes
+Struc. Handle           	WORD    	0015h
+Reference Designation   	BYTE    	Intel Gemini Lake UHD Graphics
+Device Type             	BYTE    	83h
+						Device Enabled
+						Video
+Device TypeInstance     	BYTE    	01h
+Segment Group Number    	WORD    	E000h
+Bus Number              	BYTE    	00h
+==============================================================================
+
+
+[Type 041] -- Onboard Devices Extended Information
+---------------------------------------
+Name				Type		Data
+====				====		====
+Struc. Length           	BYTE    	11 bytes
+Struc. Handle           	WORD    	0016h
+Reference Designation   	BYTE    	Onboard Realtek LAN
+Device Type             	BYTE    	85h
+						Device Enabled
+						Ethernet
+Device TypeInstance     	BYTE    	01h
+Segment Group Number    	WORD    	E000h
+Bus Number              	BYTE    	00h
+==============================================================================
+
+
+[Type 041] -- Onboard Devices Extended Information
+---------------------------------------
+Name				Type		Data
+====				====		====
+Struc. Length           	BYTE    	11 bytes
+Struc. Handle           	WORD    	0017h
+Reference Designation   	BYTE    	Onboard Resltek HD Audio
+Device Type             	BYTE    	87h
+						Device Enabled
+						Sound
+Device TypeInstance     	BYTE    	01h
+Segment Group Number    	WORD    	E000h
+Bus Number              	BYTE    	00h
+==============================================================================
+
+
+[Type 041] -- Onboard Devices Extended Information
+---------------------------------------
+Name				Type		Data
+====				====		====
+Struc. Length           	BYTE    	11 bytes
+Struc. Handle           	WORD    	0018h
+Reference Designation   	BYTE    	Onboard SATA Controller
+Device Type             	BYTE    	89h
+						Device Enabled
+						SATA Controller
+Device TypeInstance     	BYTE    	01h
+Segment Group Number    	WORD    	E000h
+Bus Number              	BYTE    	00h
+==============================================================================
+
+
+[Type 043] -- TPM Device
+---------------------------------------
+Name				Type		Data
+====				====		====
+Struc. Length           	BYTE    	31 bytes
+Struc. Handle           	WORD    	001Dh
+Vendor ID               	4 BYTEs 	49 4E 54 43h
+Major Spec Version      	BYTE    	02h
+Minor Spec Version      	BYTE    	00h
+Firmware Version 1      	DWORD   	0191 0000h
+Firmware Version 2      	DWORD   	0000 0000h
+Description             	STRING  	INTEL
+Characteristics         	QWORD   	0000 0000 0000 0010h
+						Bit.04:Family configurable via platform software support, such as BIOS Setup.
+OEM-defined             	DWORD   	0000 0000h
