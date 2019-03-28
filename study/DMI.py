@@ -1,6 +1,7 @@
 import xlrd
 import xlwt
 from xlutils.copy import copy
+import os, shutil
 
 
 def get_clean_data(filename):
@@ -62,6 +63,16 @@ def write_by_repeat_type(type_start, type_end, new_l, xls_type_line_sn, style, f
             report_writer(file_path, position, rd_book.sheet_by_index(0).cell(j, 4).value + '\n' + new_l[i][2], style)
 
 
+def file_name_p(file_dir, ext):
+    L=[]
+    for root, dirs, files in os.walk(file_dir):
+        for file in files:
+            if os.path.splitext(file)[1] == ext:
+                # L.append(os.path.join(root, file))
+                L.append(file)
+    return L
+
+
 def main():
     style = xlwt.XFStyle()  # 格式信息
     font = xlwt.Font()  # 字体基本设置
@@ -84,8 +95,10 @@ def main():
     border.bottom_colour = 0x40
     style.borders = border
 
-    filename = 'dmi.txt'
-    file_path = 'SMBIOS Table Checklist v1.8.xls'
+    original_model = 'SMBIOS Table Checklist v1.8.xls'
+    filename = file_name_p(os.path.dirname(os.path.realpath(__file__)), '.txt')[0]
+    shutil.copy(original_model, filename[0:-3]+'.xls')
+    file_path = filename[0:-3]+'.xls'
 
     data_list = get_clean_data(filename)
     new_l = []
@@ -171,3 +184,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
