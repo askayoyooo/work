@@ -329,7 +329,7 @@ Description String      	STRING  	Intel Gemini Lake UHD Graphics
 ==============================================================================
 
 
-[Type 010] -- On Board Devices Information[device #03]
+[Type 010] -- On Board Devices Information[device #02]
 ---------------------------------------
 Name				Type		Data
 ====				====		====
@@ -355,7 +355,7 @@ Description String      	STRING  	Onboard Resltek HD Audio
 ==============================================================================
 
 
-[Type 010] -- On Board Devices Information[device #05]
+[Type 010] -- On Board Devices Information[device #04]
 ---------------------------------------
 Name				Type		Data
 ====				====		====
