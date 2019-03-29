@@ -74,6 +74,9 @@ def file_name_p(file_dir, ext):
 
 
 def main():
+    print('==========================================\n')
+    print('Process is on going! Please wait patiently\n')
+    print('==========================================\n')
     style = xlwt.XFStyle()  # 格式信息
     font = xlwt.Font()  # 字体基本设置
     font.name = u'Arial'
@@ -179,7 +182,9 @@ def main():
                 continue
             else:
                 write_by_repeat_type('Type 041', 'Type 043', new_l, xls_type_line_sn, style, file_path, i)
-    print('填完一个SKU')
+    print('==========================================\n')
+    print('Finished 1 SKU result')
+    print('==========================================\n')
 
 
 if __name__ == '__main__':
