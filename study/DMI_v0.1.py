@@ -75,7 +75,7 @@ def file_name_p(file_dir, ext):
 
 def main():
     print('==========================================\n')
-    print('Process is on going! Please wait patiently\n')
+    print('Process is on going! Please wait patiently！\n')
     print('==========================================\n')
     style = xlwt.XFStyle()  # 格式信息
     font = xlwt.Font()  # 字体基本设置
