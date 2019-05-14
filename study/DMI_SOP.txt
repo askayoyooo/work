@@ -1,6 +1,9 @@
-Limitations£º
-       Ã¿¸ösku Ö»ÄÜÏÈÉú³ÉÒ»¸öÎÄ¼þ£¬ÐèÒªÈË¹¤Ìùµ½Í¬Ò»¸öreportÖÐ
-       ²¿·ÖÔÚDMIedit ¹¤¾ßÖÐ²»ÄÜ¶ÁÈ¡µÄÖµÐèÒªÁíÍâÌîÐ´¡£
-1.°Ñdmi log(.txt ¸ñÊ½) °´ÕÕsku ÃüÃû£¬²¢·ÅÔÚLogsÎÄ¼þ¼ÐÄÚ
-2.Ö´ÐÐ DMI_v0.1.exe 
-3.ÔÚlogsÎÄ¼þ¼ÐÏÂ»áÉú³ÉÓëlog Í¬ÃûµÄ xls ÎÄ¼þ£¬¶à¸ösku ÇëÊÖ¶¯ºÏ²¢¡£
+Base on DmiEdit5.24
+
+
+Limitationsï¼š
+       æ¯ä¸ªsku åªèƒ½å…ˆç”Ÿæˆä¸€ä¸ªæ–‡ä»¶ï¼Œéœ€è¦äººå·¥è´´åˆ°åŒä¸€ä¸ªreportä¸­
+       éƒ¨åˆ†åœ¨DMIedit å·¥å…·ä¸­ä¸èƒ½è¯»å–çš„å€¼éœ€è¦å¦å¤–å¡«å†™ã€‚
+1.æŠŠdmi log(.txt æ ¼å¼) æŒ‰ç…§sku å‘½åï¼Œå¹¶æ”¾åœ¨Logsæ–‡ä»¶å¤¹å†…
+2.æ‰§è¡Œ DMI_v0.1.exe 
+3.åœ¨logsæ–‡ä»¶å¤¹ä¸‹ä¼šç”Ÿæˆä¸Žlog åŒåçš„ xls æ–‡ä»¶ï¼Œå¤šä¸ªsku è¯·æ‰‹åŠ¨åˆå¹¶ã€‚
